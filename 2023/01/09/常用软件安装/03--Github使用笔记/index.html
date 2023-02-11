@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>03--Github使用笔记 | MyBlog</title>
+  <meta name="description" content="使用git命令行将本地仓库代码上传到gitee&#x2F;github远程仓库  最近在上传项目到gitee（github）的时候，总是会遇到各种各样奇奇怪怪的BUG，导致最终无法正确上传项目，于是终于摸索到了一套最简洁和便利的方式利用Git命令行的方式将代码从本地仓库上传到远程仓库。 第一步、初始化git  进入到你需要上传的项目的目录下，右键找到Git Bah Here（安装了Git的小伙伴一">
+<meta property="og:type" content="article">
+<meta property="og:title" content="03--Github使用笔记">
+<meta property="og:url" content="http://example.com/2023/01/09/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/03--Github%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="myblog">
+<meta property="og:description" content="使用git命令行将本地仓库代码上传到gitee&#x2F;github远程仓库  最近在上传项目到gitee（github）的时候，总是会遇到各种各样奇奇怪怪的BUG，导致最终无法正确上传项目，于是终于摸索到了一套最简洁和便利的方式利用Git命令行的方式将代码从本地仓库上传到远程仓库。 第一步、初始化git  进入到你需要上传的项目的目录下，右键找到Git Bah Here（安装了Git的小伙伴一">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2023/01/09/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/03--Github%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/clip_image002.png">
+<meta property="og:image" content="http://example.com/2023/01/09/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/03--Github%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/clip_image004.png">
+<meta property="og:image" content="http://example.com/2023/01/09/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/03--Github%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/clip_image006.png">
+<meta property="og:image" content="http://example.com/2023/01/09/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/03--Github%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/clip_image001.jpg">
+<meta property="og:image" content="http://example.com/2023/01/09/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/03--Github%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/clip_image002.jpg">
+<meta property="og:image" content="http://example.com/2023/01/09/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/03--Github%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/clip_image004.jpg">
+<meta property="og:image" content="http://example.com/2023/01/09/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/03--Github%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/clip_image006.jpg">
+<meta property="article:published_time" content="2023-01-09T12:11:16.000Z">
+<meta property="article:modified_time" content="2023-01-09T12:13:40.573Z">
+<meta property="article:author" content="PWT">
+<meta property="article:tag" content="Github">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2023/01/09/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/03--Github%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/clip_image002.png">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://example.com/2023/01/09/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/03--Github%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="myblog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+    <link href="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.3.5/dist/jquery.fancybox.min.css" rel="stylesheet">
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body class="main-center theme-purple" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="" target="_blank">
+          <img class="img-circle img-rotate" src="/./img/PWT.png" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">PWT</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">心中有光--何惧路长</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> 中国</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav menu-highlight">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">友链</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hardware/">Hardware</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux%E5%9F%BA%E7%A1%80/">Linux基础</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Qt/">Qt</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/STM32%E5%9F%BA%E7%A1%80/">STM32基础</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/">常用软件安装</a><span class="category-list-count">3</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AltiumDesigner/" rel="tag">AltiumDesigner</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/" rel="tag">Github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo%E5%8D%9A%E5%AE%A2/" rel="tag">Hexo博客</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Qt%E5%9F%BA%E7%A1%80/" rel="tag">Qt基础</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/STM32/" rel="tag">STM32</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Typora/" rel="tag">Typora</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/AltiumDesigner/" style="font-size: 13px;">AltiumDesigner</a> <a href="/tags/Github/" style="font-size: 13px;">Github</a> <a href="/tags/Hexo%E5%8D%9A%E5%AE%A2/" style="font-size: 13px;">Hexo博客</a> <a href="/tags/Linux/" style="font-size: 14px;">Linux</a> <a href="/tags/Qt%E5%9F%BA%E7%A1%80/" style="font-size: 13px;">Qt基础</a> <a href="/tags/STM32/" style="font-size: 13px;">STM32</a> <a href="/tags/Typora/" style="font-size: 13px;">Typora</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget tag">
+    <h3 class="title">归档</h3>
+    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">2023年01月</a><span class="archive-list-count">9</span></li></ul>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/">常用软件安装</a>
+              </p>
+              <p class="item-title">
+                <a href="/2023/01/09/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/03--Github%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/" class="title">03--Github使用笔记</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2023-01-09T12:11:16.000Z" itemprop="datePublished">2023-01-09</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/Hardware/">Hardware</a>
+              </p>
+              <p class="item-title">
+                <a href="/2023/01/09/Hardware/AltiumDesigner/AltiumDesigner%E7%AC%94%E8%AE%B0/" class="title">AltiumDesigner笔记</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2023-01-09T11:44:55.000Z" itemprop="datePublished">2023-01-09</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/">常用软件安装</a>
+              </p>
+              <p class="item-title">
+                <a href="/2023/01/09/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/01--Typora%E6%95%99%E7%A8%8B/" class="title">01--Typora教程</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2023-01-09T05:30:45.000Z" itemprop="datePublished">2023-01-09</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/Qt/">Qt</a>
+              </p>
+              <p class="item-title">
+                <a href="/2023/01/09/Qt/01--Qt%E5%9F%BA%E7%A1%80/" class="title">01--Qt基础</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2023-01-09T05:28:09.000Z" itemprop="datePublished">2023-01-09</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/">常用软件安装</a>
+              </p>
+              <p class="item-title">
+                <a href="/2023/01/09/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/02--Hexo%E5%8D%9A%E5%AE%A2/" class="title">02--Hexo博客</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2023-01-09T05:21:26.000Z" itemprop="datePublished">2023-01-09</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+  <aside class="sidebar sidebar-toc collapse   in  " id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <nav id="toc" class="article-toc">
+      <h3 class="toc-title">文章目录</h3>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8git%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B0%86%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93%E4%BB%A3%E7%A0%81%E4%B8%8A%E4%BC%A0%E5%88%B0giteex2fgithub%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93"><span class="toc-number">1.</span> <span class="toc-text">使用git命令行将本地仓库代码上传到gitee&#x2F;github远程仓库</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5-%E5%88%9D%E5%A7%8B%E5%8C%96git"><span class="toc-number">1.1.</span> <span class="toc-text">第一步、初始化git</span></a></li></ol></li></ol>
+    </nav>
+  </div>
+</aside>
+
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-常用软件安装/03--Github使用笔记" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      03--Github使用笔记
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2023/01/09/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/03--Github%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/" class="article-date">
+	  <time datetime="2023-01-09T12:11:16.000Z" itemprop="datePublished">2023-01-09</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/">常用软件安装</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/Github/" rel="tag">Github</a>
+  </span>
+
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+	<span class="article-read hidden-xs">
+    	<i class="icon icon-eye-fill" aria-hidden="true"></i>
+    	<span id="/2023/01/09/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/03--Github%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/" class="leancloud_visitors"  data-flag-title="03--Github使用笔记">0</span>
+    </span>
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2023/01/09/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/03--Github%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/#comments" class="article-comment-link">评论</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 931(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 3(分)</span>
+	
+
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h3 id="使用git命令行将本地仓库代码上传到giteex2fgithub远程仓库"><a href="#使用git命令行将本地仓库代码上传到gitee-x2F-github远程仓库" class="headerlink" title="使用git命令行将本地仓库代码上传到gitee&#x2F;github远程仓库"></a>使用git命令行将本地仓库代码上传到gitee&#x2F;github远程仓库</h3><p>  最近在上传项目到gitee（github）的时候，总是会遇到各种各样奇奇怪怪的BUG，导致最终无法正确上传项目，于是终于摸索到了一套最简洁和便利的方式利用Git命令行的方式将代码从本地仓库上传到远程仓库。</p>
+<h4 id="第一步-初始化git"><a href="#第一步、初始化git" class="headerlink" title="第一步、初始化git"></a>第一步、初始化git</h4><p>  进入到你需要上传的项目的目录下，右键找到Git Bah Here（安装了Git的小伙伴一般都是可以很轻松得找到），目的是可以直接在当前目录进行初始化，无需再cd寻找目录，麻烦！ </p>
+<p>  打开命令行后就会自动定位到该目录，然后输入Git初始化命令。</p>
+<p>git init</p>
+<p>  输入完以后就可以看到该目录下多了一个隐藏文件.git<strong>（前提是必须将不显示的隐藏文件显示出来）</strong> </p>
+<p><img src="/2023/01/09/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/03--Github%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/clip_image002.png" alt="img"></p>
+<p><strong>第二步、将本地项目工作区的所有文件添加到暂存区</strong></p>
+<p># 小数点 “.” ，意为添加文件夹下的所有文件；也可以将 “.” 换成具体的文件名，如果想添加项目中的指定文件，那就把 “.” 改为指定文件名即可。</p>
+<p>git add .</p>
+<p>复制</p>
+<p><strong>第三步、将暂存区的文件提交到本地仓库</strong></p>
+<p># 注释的作用是告诉下载和浏览的用户你这次提交代码所改变的地方</p>
+<p>git commit -m “注释说明”</p>
+<p>复制</p>
+<p><strong>第四步、在<strong><strong>gitee</strong></strong>（<strong><strong>github</strong></strong>）上新建远程仓库</strong></p>
+<p><img src="/2023/01/09/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/03--Github%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/clip_image004.png" alt="img"></p>
+<p><strong>第五步、将本地代码仓库关联到</strong> <strong>gitee</strong> <strong>上</strong></p>
+<p>git remote add origin 仓库地址</p>
+<p>复制</p>
+<p><img src="/2023/01/09/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/03--Github%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/clip_image006.png" alt="img"></p>
+<p>  仓库地址就是复制这里的地址。作用是将本地的仓库关联到远程仓库。   在这一步时如果出现错误：fatal:remote origin already exists，解决方法如下：</p>
+<ol>
+<li>先输入</li>
+</ol>
+<p>git remote rm origin</p>
+<p>复制</p>
+<ol>
+<li>再输入</li>
+</ol>
+<p>git remote add origin 仓库地址</p>
+<p>复制</p>
+<p><strong>第六步、将代码由本地仓库上传到</strong> <strong>gitee****远程仓库</strong></p>
+<p><strong>6.1****、获取远程库与本地同步合并</strong></p>
+<p>  如果远程库不为空必须做这一步，否则后面的提交会失败。</p>
+<p># 不加这句可能报错，原因是 gitee 中的 README.md 文件不在本地仓库中。</p>
+<p># 可以通过该命令进行代码合并</p>
+<p>git pull –rebase origin master </p>
+<p>复制</p>
+<p><strong>6.2****、</strong> <strong>把当前分支</strong> <strong>master</strong> <strong>推送到远程</strong></p>
+<p>  执行此命令后有可能会让输入用户名、密码</p>
+<p>git push -u origin master</p>
+<p>复制</p>
+<p>  执行完之后如果无错误就上传成功了，需要提示的是这里的 master 是 gitee默认的分支。</p>
+<ol>
+<li>如果你本地的当前分支不是 master，就用git checkout master命令切换到master分支。</li>
+<li>如果你想用本地当前分支上传代码，则把第6步的命令里的 master 切换成你的当前分支名即可。</li>
+</ol>
+<p><strong>第七步、操作成功</strong></p>
+<p>为了使自己成为一个真正的程序员</p>
+<p>拒绝重复造轮子</p>
+<p>我开始 不断学习。</p>
+<p>今天分享一下“如何使用git下载GitHub代码”！</p>
+<p>1、创建一个文件夹。</p>
+<p>-&gt;说明：你想把代码下载到哪里，就在哪里新建一个文件夹。</p>
+<p>2、鼠标右击此文件夹，选择“Git Bash Here”，此时会弹出一个命令行窗口。</p>
+<p><img src="/2023/01/09/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/03--Github%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/clip_image001.jpg" alt="img"></p>
+<p>3、在命令行窗口中输入“git init”，回车，此时刚创建文件夹中出现一个.git文件夹。</p>
+<p><img src="/2023/01/09/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/03--Github%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/clip_image002.jpg" alt="img"></p>
+<p>4、先在GitHub中复制URL，然后在命令行窗口中输入“git clone 【URL】”，回车，等待下载完成。（URl直接粘贴，鼠标右击选择“Paste”）</p>
+<p><img src="/2023/01/09/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/03--Github%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/clip_image004.jpg" alt="img"></p>
+<p>5、大功告成！下图为步骤3、4的命令行示意图。</p>
+<p><img src="/2023/01/09/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/03--Github%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/clip_image006.jpg" alt="img"></p>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://example.com/2023/01/09/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/03--Github%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/" title="03--Github使用笔记" target="_blank" rel="external">http://example.com/2023/01/09/常用软件安装/03--Github使用笔记/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/./img/PWT.png" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="" target="_blank"><span class="text-dark">PWT</span><small class="ml-1x">心中有光--何惧路长</small></a></h3>
+        <div></div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2023/01/09/Hardware/AltiumDesigner/AltiumDesigner%E7%AC%94%E8%AE%B0/" title="AltiumDesigner笔记"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+    <li class="toggle-toc">
+      <a class="toggle-btn " data-toggle="collapse" href="#collapseToc" aria-expanded="false" title="文章目录" role="button">    <span>[&nbsp;</span><span>文章目录</span>
+        <i class="text-collapsed icon icon-anchor"></i>
+        <i class="text-in icon icon-close"></i>
+        <span>]</span>
+      </a>
+    </li>
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+  </div>
+  </div>
+</nav>
+  
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> PWT </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<!-- custom analytics part create by xiamo -->
+<script defer src="https://cdn1.lncld.net/static/js/av-min-1.2.1.js"></script>
+<script defer>
+AV.init({
+  appId: '',
+  appKey: ''
+});
+
+function showTime(Counter) {
+	var query = new AV.Query(Counter);
+		var visitors= $('.leancloud_visitors');
+		query.greaterThanOrEqualTo("time", 0);		
+		query.find({
+			success: function(results) {
+				if (results.length == 0) {				
+					return;
+				}
+				var data = results;
+				visitors.each(function(){
+					var url = $(this).attr('id').trim();					
+					for (var i = 0; i < data.length; i++) {
+						var object = data[i];
+						var content = object.get('time');
+						var _url = object.get('url')
+						if(url == _url){
+							$(this).text(content);
+						}
+					}
+				})
+				
+			},
+			error: function(object, error) {
+				console.log("Error: " + error.code + " " + error.message);
+			}
+		});
+}
+
+function addCount(Counter) {
+	var Counter = AV.Object.extend("Counter");
+	url = $(".leancloud_visitors").attr('id').trim();
+	title = $(".leancloud_visitors").attr('data-flag-title').trim();
+	var query = new AV.Query(Counter);
+	query.equalTo("url", url);
+	query.find({
+		success: function(results) {
+			if (results.length > 0) {
+				var counter = results[0];
+				counter.fetchWhenSave(true);
+				counter.increment("time");
+				counter.save(null, {
+					success: function(counter) {
+						var content = counter.get('time');
+						$(document.getElementById(url)).text(content);
+					},
+					error: function(counter, error) {
+						console.log('Failed to save Visitor num, with error message: ' + error.message);
+					}
+				});
+			} else {
+				var newcounter = new Counter();
+				newcounter.set("title", title);
+				newcounter.set("url", url);
+				newcounter.set("time", 1);
+				newcounter.save(null, {
+					success: function(newcounter) {
+					    console.log("newcounter.get('time')="+newcounter.get('time'));
+						var content = newcounter.get('time');
+						$(document.getElementById(url)).text(content);
+					},
+					error: function(newcounter, error) {
+						console.log('Failed to create');
+					}
+				});
+			}
+		},
+		error: function(error) {
+			console.log('Error:' + error.code + " " + error.message);
+		}
+	});
+}
+$(function() {
+	var Counter = AV.Object.extend("Counter");
+	if ($('.leancloud_visitors').length == 1) {
+		addCount(Counter);
+	} else {
+		showTime(Counter);
+	}
+}); 
+</script>
+
+
+
+   
+
+
+  <script src="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.3.5/dist/jquery.fancybox.min.js"></script>
+  <script>
+  //利用 FancyBox 实现点击图片放大
+  $(document).ready(function() {
+    $('article img').not('[hidden]').not('.panel-body img').each(function() {
+      var $image = $(this);
+      var imageCaption = $image.attr('alt');
+      var $imageWrapLink = $image.parent('a');
+      if ($imageWrapLink.length < 1) {
+        var src = this.getAttribute('src');
+        var idx = src.lastIndexOf('?');
+        if (idx != -1) {
+          src = src.substring(0, idx);
+        }
+        $imageWrapLink = $image.wrap('<a href="' + src + '"></a>').parent('a');
+      }
+      $imageWrapLink.attr('data-fancybox', 'images');
+      if (imageCaption) {
+        $imageWrapLink.attr('data-caption', imageCaption);
+      }
+    });
+    $().fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+    });
+  });
+  </script>
+
+
+
+
+
+</body>
+</html>

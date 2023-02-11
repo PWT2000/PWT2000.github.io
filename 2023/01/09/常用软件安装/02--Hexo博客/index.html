@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>02--Hexo博客 | MyBlog</title>
+  <meta name="description" content="第一步：安装Node.js下载地址：Node.js先安装好Node.js，并配置使用淘宝镜像源。 1npm config set registry https:&#x2F;&#x2F;registry.npm.taobao.org  第二步：安装Hexo框架执行如下命令安装Hexo： 1npm install -g hexo-cli  第三步：安装Markdown编辑器安装一个顺手的Markdown编辑器，这里推荐T">
+<meta property="og:type" content="article">
+<meta property="og:title" content="02--Hexo博客">
+<meta property="og:url" content="http://example.com/2023/01/09/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/02--Hexo%E5%8D%9A%E5%AE%A2/index.html">
+<meta property="og:site_name" content="myblog">
+<meta property="og:description" content="第一步：安装Node.js下载地址：Node.js先安装好Node.js，并配置使用淘宝镜像源。 1npm config set registry https:&#x2F;&#x2F;registry.npm.taobao.org  第二步：安装Hexo框架执行如下命令安装Hexo： 1npm install -g hexo-cli  第三步：安装Markdown编辑器安装一个顺手的Markdown编辑器，这里推荐T">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-01-09T05:21:26.000Z">
+<meta property="article:modified_time" content="2023-01-09T05:25:15.459Z">
+<meta property="article:author" content="PWT">
+<meta property="article:tag" content="Hexo博客">
+<meta name="twitter:card" content="summary">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://example.com/2023/01/09/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/02--Hexo%E5%8D%9A%E5%AE%A2/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="myblog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+    <link href="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.3.5/dist/jquery.fancybox.min.css" rel="stylesheet">
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body class="main-center theme-purple" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="" target="_blank">
+          <img class="img-circle img-rotate" src="/./img/PWT.png" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">PWT</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">心中有光--何惧路长</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> 中国</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav menu-highlight">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">友链</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hardware/">Hardware</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux%E5%9F%BA%E7%A1%80/">Linux基础</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Qt/">Qt</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/STM32%E5%9F%BA%E7%A1%80/">STM32基础</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/">常用软件安装</a><span class="category-list-count">3</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AltiumDesigner/" rel="tag">AltiumDesigner</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/" rel="tag">Github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo%E5%8D%9A%E5%AE%A2/" rel="tag">Hexo博客</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Qt%E5%9F%BA%E7%A1%80/" rel="tag">Qt基础</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/STM32/" rel="tag">STM32</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Typora/" rel="tag">Typora</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/AltiumDesigner/" style="font-size: 13px;">AltiumDesigner</a> <a href="/tags/Github/" style="font-size: 13px;">Github</a> <a href="/tags/Hexo%E5%8D%9A%E5%AE%A2/" style="font-size: 13px;">Hexo博客</a> <a href="/tags/Linux/" style="font-size: 14px;">Linux</a> <a href="/tags/Qt%E5%9F%BA%E7%A1%80/" style="font-size: 13px;">Qt基础</a> <a href="/tags/STM32/" style="font-size: 13px;">STM32</a> <a href="/tags/Typora/" style="font-size: 13px;">Typora</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget tag">
+    <h3 class="title">归档</h3>
+    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">2023年01月</a><span class="archive-list-count">9</span></li></ul>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/">常用软件安装</a>
+              </p>
+              <p class="item-title">
+                <a href="/2023/01/09/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/03--Github%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/" class="title">03--Github使用笔记</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2023-01-09T12:11:16.000Z" itemprop="datePublished">2023-01-09</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/Hardware/">Hardware</a>
+              </p>
+              <p class="item-title">
+                <a href="/2023/01/09/Hardware/AltiumDesigner/AltiumDesigner%E7%AC%94%E8%AE%B0/" class="title">AltiumDesigner笔记</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2023-01-09T11:44:55.000Z" itemprop="datePublished">2023-01-09</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/">常用软件安装</a>
+              </p>
+              <p class="item-title">
+                <a href="/2023/01/09/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/01--Typora%E6%95%99%E7%A8%8B/" class="title">01--Typora教程</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2023-01-09T05:30:45.000Z" itemprop="datePublished">2023-01-09</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/Qt/">Qt</a>
+              </p>
+              <p class="item-title">
+                <a href="/2023/01/09/Qt/01--Qt%E5%9F%BA%E7%A1%80/" class="title">01--Qt基础</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2023-01-09T05:28:09.000Z" itemprop="datePublished">2023-01-09</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/">常用软件安装</a>
+              </p>
+              <p class="item-title">
+                <a href="/2023/01/09/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/02--Hexo%E5%8D%9A%E5%AE%A2/" class="title">02--Hexo博客</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2023-01-09T05:21:26.000Z" itemprop="datePublished">2023-01-09</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+  <aside class="sidebar sidebar-toc collapse   in  " id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <nav id="toc" class="article-toc">
+      <h3 class="toc-title">文章目录</h3>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5%E5%AE%89%E8%A3%85nodejs"><span class="toc-number">1.</span> <span class="toc-text">第一步：安装Node.js</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E5%9C%B0%E5%9D%80nodejs"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">下载地址：Node.js</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5%E5%AE%89%E8%A3%85hexo%E6%A1%86%E6%9E%B6"><span class="toc-number">2.</span> <span class="toc-text">第二步：安装Hexo框架</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E6%AD%A5%E5%AE%89%E8%A3%85markdown%E7%BC%96%E8%BE%91%E5%99%A8"><span class="toc-number">3.</span> <span class="toc-text">第三步：安装Markdown编辑器</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E5%9C%B0%E5%9D%80typora"><span class="toc-number">3.0.0.1.</span> <span class="toc-text">下载地址：Typora</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E6%AD%A5%E5%88%9D%E5%A7%8B%E5%8C%96%E5%8D%9A%E5%AE%A2"><span class="toc-number">4.</span> <span class="toc-text">第四步：初始化博客</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E4%B8%BB%E9%A2%98"><span class="toc-number">5.</span> <span class="toc-text">配置主题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%99%E5%8D%9A%E5%AE%A2"><span class="toc-number">6.</span> <span class="toc-text">写博客</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2"><span class="toc-number">7.</span> <span class="toc-text">生成静态页面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E7%9A%84%E6%8F%92%E4%BB%B6"><span class="toc-number">8.</span> <span class="toc-text">一些常用的插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-number">9.</span> <span class="toc-text">Hexo常用命令</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E5%8D%9A%E5%AE%A2%E7%9B%AE%E5%BD%95"><span class="toc-number">9.0.0.1.</span> <span class="toc-text">初始化博客目录</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%96%B0%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0"><span class="toc-number">9.0.0.2.</span> <span class="toc-text">新建博客文章</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B0%86markdown%E6%96%87%E4%BB%B6%E8%BD%AC%E6%8D%A2%E4%B8%BAhtml%E9%A1%B5%E9%9D%A2"><span class="toc-number">9.0.0.3.</span> <span class="toc-text">将markdown文件转换为html页面</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8%E6%9C%AC%E5%9C%B0web%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-number">9.0.0.4.</span> <span class="toc-text">启动本地Web服务器</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B0%86%E5%8D%9A%E5%AE%A2%E6%A0%B9%E7%9B%AE%E5%BD%95x2fpublic%E8%B7%AF%E5%BE%84%E4%B8%8B%E8%BD%AC%E6%8D%A2%E7%94%9F%E6%88%90%E7%9A%84html%E9%A1%B5%E9%9D%A2%E4%B8%8A%E4%BC%A0%E5%88%B0%E6%8C%87%E5%AE%9A%E4%B8%BB%E6%9C%BA"><span class="toc-number">9.0.0.5.</span> <span class="toc-text">将博客根目录&#x2F;public路径下转换生成的html页面上传到指定主机</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B8%85%E7%A9%BA%E5%8D%9A%E5%AE%A2%E6%A0%B9%E7%9B%AE%E5%BD%95x2fpublic%E8%B7%AF%E5%BE%84%E4%B8%8B%E7%9A%84%E6%89%80%E6%9C%89%E6%95%B0%E6%8D%AE"><span class="toc-number">9.0.0.6.</span> <span class="toc-text">清空博客根目录&#x2F;public路径下的所有数据</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-number">9.1.</span> <span class="toc-text">常用命令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E5%90%AF%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95"><span class="toc-number">10.</span> <span class="toc-text">开启文章目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%B7%B3%E8%BD%AC%E5%88%B0%E6%8C%87%E5%AE%9A%E4%BD%8D%E7%BD%AE"><span class="toc-number">11.</span> <span class="toc-text">文章目录跳转到指定位置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E5%B7%A6%E4%BE%A7%E6%A0%8F%E5%B7%A6%E4%B8%8B%E6%A0%87%E6%96%87%E5%AD%97"><span class="toc-number">11.0.1.</span> <span class="toc-text">修改左侧栏左下标文字</span></a></li></ol></li></ol></li></ol>
+    </nav>
+  </div>
+</aside>
+
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-常用软件安装/02--Hexo博客" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      02--Hexo博客
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2023/01/09/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/02--Hexo%E5%8D%9A%E5%AE%A2/" class="article-date">
+	  <time datetime="2023-01-09T05:21:26.000Z" itemprop="datePublished">2023-01-09</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/">常用软件安装</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/Hexo%E5%8D%9A%E5%AE%A2/" rel="tag">Hexo博客</a>
+  </span>
+
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+	<span class="article-read hidden-xs">
+    	<i class="icon icon-eye-fill" aria-hidden="true"></i>
+    	<span id="/2023/01/09/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/02--Hexo%E5%8D%9A%E5%AE%A2/" class="leancloud_visitors"  data-flag-title="02--Hexo博客">0</span>
+    </span>
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2023/01/09/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/02--Hexo%E5%8D%9A%E5%AE%A2/#comments" class="article-comment-link">评论</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1.2k(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 4(分)</span>
+	
+
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h2 id="第一步安装nodejs"><a href="#第一步：安装Node-js" class="headerlink" title="第一步：安装Node.js"></a>第一步：安装Node.js</h2><h5 id="下载地址nodejs"><a href="#下载地址：Node-js" class="headerlink" title="下载地址：Node.js"></a>下载地址：<a target="_blank" rel="noopener" href="https://nodejs.org/en/download/">Node.js</a></h5><p>先安装好Node.js，并配置使用淘宝镜像源。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config set registry <span class="attr">https</span>:<span class="comment">//registry.npm.taobao.org</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="第二步安装hexo框架"><a href="#第二步：安装Hexo框架" class="headerlink" title="第二步：安装Hexo框架"></a>第二步：安装Hexo框架</h2><p>执行如下命令安装Hexo：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+
+<h2 id="第三步安装markdown编辑器"><a href="#第三步：安装Markdown编辑器" class="headerlink" title="第三步：安装Markdown编辑器"></a>第三步：安装Markdown编辑器</h2><p>安装一个顺手的Markdown编辑器，这里推荐Typora编辑器.</p>
+<h5 id="下载地址typora"><a href="#下载地址：Typora" class="headerlink" title="下载地址：Typora"></a>下载地址：<a target="_blank" rel="noopener" href="https://typoraio.cn/">Typora</a></h5><h2 id="第四步初始化博客"><a href="#第四步：初始化博客" class="headerlink" title="第四步：初始化博客"></a>第四步：初始化博客</h2><p>执行如下命令初始化博客：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 初始化一个名称为iblog的博客目录，将来所有关于博客的参数设置，以及写博客文章都在该目录下进行</span><br><span class="line">hexo init iblog</span><br><span class="line">cd iblog</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+
+<p>完成上述操作后，在博客文件夹下将会看到如下目录结构：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── _config.<span class="property">yml</span></span><br><span class="line">├── package.<span class="property">json</span></span><br><span class="line">├── scaffolds</span><br><span class="line">├── source</span><br><span class="line">|   ├── _drafts</span><br><span class="line">|   └── _posts</span><br><span class="line">└── themes</span><br></pre></td></tr></table></figure>
+
+<p><code>themes</code>目录保存主题相关的文件，所有安装的主题都保存在该目录下。 <code>source</code>目录保存博客文章静态文件，其中 <code>_drafts</code>保存草稿，<code>_posts</code>保存正式文章，这可以在新建资源时指定类型。 <code>_config.yml</code>是博客的全局配置文件（注：通常主题也会有一个名为 <code>_config.yml</code>的配置文件）。至此，一个静态博客的基本基本雏形已经完成了，接下来则需要对博客进行主题配置，并开始写博客文章了。</p>
+<h2 id="配置主题"><a href="#配置主题" class="headerlink" title="配置主题"></a>配置主题</h2><p>主题决定了博客的展示样式和支持的功能。</p>
+<h2 id="写博客"><a href="#写博客" class="headerlink" title="写博客"></a>写博客</h2><p>在博客根目录下执行如下命令新建一篇博客：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="keyword">new</span> post -p /博客搭建/<span class="string">&quot;Hexo博客搭建笔记&quot;</span><span class="comment">//Hexo博客搭建笔记--文章名</span></span><br><span class="line">指定路径新建博客文章</span><br></pre></td></tr></table></figure>
+
+<h2 id="生成静态页面"><a href="#生成静态页面" class="headerlink" title="生成静态页面"></a>生成静态页面</h2><p>写好文章后，在博客根目录下执行如下命令生成静态页面：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>执行完上述命令之后，将会在博客根目录下生成一个名为 <code>public</code>的目录，该目录保存着动态生成的HTML文件，将 <code>public</code>目录下的内容托管到nginx即可访问。</p>
+<p>在本地写博客时，可以在博客根目录下执行 <code>hexo server</code>命令，启动本地Web服务进行查看。</p>
+<h2 id="一些常用的插件"><a href="#一些常用的插件" class="headerlink" title="一些常用的插件"></a>一些常用的插件</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment#Rsync">hexo-deployer-rsync</a> ：通过rsync将本地生成的静态文件上传到服务器指定目录，执行命令 <code>hexo deploy</code>时调用该插件</li>
+<li><a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment#Git">hexo-deployer-git</a>：将本地生成的静态文件上传到指定git仓库，执行命令<code>hexo deploy</code>时调用该插件</li>
+</ul>
+<h2 id="hexo常用命令"><a href="#Hexo常用命令" class="headerlink" title="Hexo常用命令"></a>Hexo常用命令</h2><h5 id="初始化博客目录"><a href="#初始化博客目录" class="headerlink" title="初始化博客目录"></a>初始化博客目录</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init 博客名称</span><br></pre></td></tr></table></figure>
+
+<h5 id="新建博客文章"><a href="#新建博客文章" class="headerlink" title="新建博客文章"></a>新建博客文章</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 执行该命令后将会在博客根目录/source/_posts路径下新建一个markdown文件</span><br><span class="line"># 编辑该markdown文件即可</span><br><span class="line">hexo <span class="keyword">new</span> post <span class="string">&#x27;文章标题&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="将markdown文件转换为html页面"><a href="#将markdown文件转换为html页面" class="headerlink" title="将markdown文件转换为html页面"></a>将markdown文件转换为html页面</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#（保存到博客根目录/public路径），将来布署到web服务器的是这些转换后的html页面</span><br><span class="line">hexo generate  或  hexo g</span><br></pre></td></tr></table></figure>
+
+<h5 id="启动本地web服务器"><a href="#启动本地Web服务器" class="headerlink" title="启动本地Web服务器"></a>启动本地Web服务器</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 默认启动在<span class="number">4000</span>端口，打开浏览器即可看到整个博客站点的所有文章</span><br><span class="line">hexo server  或  hexo s</span><br></pre></td></tr></table></figure>
+
+<h5 id="将博客根目录x2fpublic路径下转换生成的html页面上传到指定主机"><a href="#将博客根目录-x2F-public路径下转换生成的html页面上传到指定主机" class="headerlink" title="将博客根目录&#x2F;public路径下转换生成的html页面上传到指定主机"></a>将博客根目录&#x2F;public路径下转换生成的html页面上传到指定主机</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 这个功能需要先在博客根目录/_config.<span class="property">yml</span>文件配置布署参数，如下示例将通过rsync将文件上传到指定服务器目录</span><br><span class="line"># <span class="attr">deploy</span>:</span><br><span class="line">#  <span class="attr">type</span>: rsync</span><br><span class="line">#  <span class="attr">host</span>: <span class="number">192.168</span><span class="number">.10</span><span class="number">.122</span></span><br><span class="line">#  <span class="attr">user</span>: zhangsan</span><br><span class="line">#  <span class="attr">root</span>: <span class="regexp">/data/</span>www/html</span><br><span class="line">hexo deploy  或  hexo d</span><br></pre></td></tr></table></figure>
+
+<h5 id="清空博客根目录x2fpublic路径下的所有数据"><a href="#清空博客根目录-x2F-public路径下的所有数据" class="headerlink" title="清空博客根目录&#x2F;public路径下的所有数据"></a>清空博客根目录&#x2F;public路径下的所有数据</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
+
+<p>可以将上述命令写一个脚本中，方便调用。</p>
+<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="keyword">new</span> <span class="string">&quot;name&quot;</span>       # 新建文章</span><br><span class="line">hexo <span class="keyword">new</span> page <span class="string">&quot;name&quot;</span>  # 新建页面</span><br><span class="line">hexo g                # 生成页面</span><br><span class="line">hexo d                # 部署</span><br><span class="line">hexo g -d             # 生成页面并部署</span><br><span class="line">hexo s                # 本地预览</span><br><span class="line">hexo clean            # 清除缓存和已生成的静态文件</span><br><span class="line">hexo help             # 帮助</span><br></pre></td></tr></table></figure>
+
+<h2 id="开启文章目录"><a href="#开启文章目录" class="headerlink" title="开启文章目录"></a>开启文章目录</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">主题配置文件blog/themes/pure/_config.<span class="property">yml</span>里面config → <span class="attr">toc</span>: <span class="literal">true</span>开启目录</span><br><span class="line">每一篇文章blog/source/_posts/xxx.<span class="property">md</span>的头部都加上<span class="attr">toc</span>: <span class="literal">true</span></span><br><span class="line">文章模板blog/scaffolds/post.<span class="property">md</span>的头部也加上<span class="attr">toc</span>: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p>这样子，新老文章的目录都已经开启了。</p>
+<h2 id="文章目录跳转到指定位置"><a href="#文章目录跳转到指定位置" class="headerlink" title="文章目录跳转到指定位置"></a>文章目录跳转到指定位置</h2><p>点击文章目录无反应，F12查看html，发现<code>toc-link</code>后面没有href属性。</p>
+<p>进入你项目根目录的 <code>node_modules\hexo-toc\lib\filter.js</code> 中，把 28 行～31 行修改为</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$title.<span class="title function_">attr</span>(<span class="string">&#x27;id&#x27;</span>, id);</span><br><span class="line"><span class="comment">// $title.children(&#x27;a&#x27;).remove();</span></span><br><span class="line"><span class="comment">// $title.html( &#x27;&lt;span id=&quot;&#x27; + id + &#x27;&quot;&gt;&#x27; + $title.html() + &#x27;&lt;/span&gt;&#x27; );</span></span><br><span class="line"><span class="comment">// $title.removeAttr(&#x27;id&#x27;);</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="修改左侧栏左下标文字"><a href="#修改左侧栏左下标文字" class="headerlink" title="修改左侧栏左下标文字"></a>修改左侧栏左下标文字</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;C:\Users\PWT\myblog\themes\pure\layout\_common\footer.ejs&quot;</span><span class="comment">//在这个文件中修改</span></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://example.com/2023/01/09/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/02--Hexo%E5%8D%9A%E5%AE%A2/" title="02--Hexo博客" target="_blank" rel="external">http://example.com/2023/01/09/常用软件安装/02--Hexo博客/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/./img/PWT.png" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="" target="_blank"><span class="text-dark">PWT</span><small class="ml-1x">心中有光--何惧路长</small></a></h3>
+        <div></div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2023/01/09/Qt/01--Qt%E5%9F%BA%E7%A1%80/" title="01--Qt基础"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2023/01/09/MCU/STM32/STM32%E5%9F%BA%E7%A1%80/01--STM32%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" title="01--STM32开发环境搭建"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+    <li class="toggle-toc">
+      <a class="toggle-btn " data-toggle="collapse" href="#collapseToc" aria-expanded="false" title="文章目录" role="button">    <span>[&nbsp;</span><span>文章目录</span>
+        <i class="text-collapsed icon icon-anchor"></i>
+        <i class="text-in icon icon-close"></i>
+        <span>]</span>
+      </a>
+    </li>
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+  </div>
+  </div>
+</nav>
+  
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> PWT </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<!-- custom analytics part create by xiamo -->
+<script defer src="https://cdn1.lncld.net/static/js/av-min-1.2.1.js"></script>
+<script defer>
+AV.init({
+  appId: '',
+  appKey: ''
+});
+
+function showTime(Counter) {
+	var query = new AV.Query(Counter);
+		var visitors= $('.leancloud_visitors');
+		query.greaterThanOrEqualTo("time", 0);		
+		query.find({
+			success: function(results) {
+				if (results.length == 0) {				
+					return;
+				}
+				var data = results;
+				visitors.each(function(){
+					var url = $(this).attr('id').trim();					
+					for (var i = 0; i < data.length; i++) {
+						var object = data[i];
+						var content = object.get('time');
+						var _url = object.get('url')
+						if(url == _url){
+							$(this).text(content);
+						}
+					}
+				})
+				
+			},
+			error: function(object, error) {
+				console.log("Error: " + error.code + " " + error.message);
+			}
+		});
+}
+
+function addCount(Counter) {
+	var Counter = AV.Object.extend("Counter");
+	url = $(".leancloud_visitors").attr('id').trim();
+	title = $(".leancloud_visitors").attr('data-flag-title').trim();
+	var query = new AV.Query(Counter);
+	query.equalTo("url", url);
+	query.find({
+		success: function(results) {
+			if (results.length > 0) {
+				var counter = results[0];
+				counter.fetchWhenSave(true);
+				counter.increment("time");
+				counter.save(null, {
+					success: function(counter) {
+						var content = counter.get('time');
+						$(document.getElementById(url)).text(content);
+					},
+					error: function(counter, error) {
+						console.log('Failed to save Visitor num, with error message: ' + error.message);
+					}
+				});
+			} else {
+				var newcounter = new Counter();
+				newcounter.set("title", title);
+				newcounter.set("url", url);
+				newcounter.set("time", 1);
+				newcounter.save(null, {
+					success: function(newcounter) {
+					    console.log("newcounter.get('time')="+newcounter.get('time'));
+						var content = newcounter.get('time');
+						$(document.getElementById(url)).text(content);
+					},
+					error: function(newcounter, error) {
+						console.log('Failed to create');
+					}
+				});
+			}
+		},
+		error: function(error) {
+			console.log('Error:' + error.code + " " + error.message);
+		}
+	});
+}
+$(function() {
+	var Counter = AV.Object.extend("Counter");
+	if ($('.leancloud_visitors').length == 1) {
+		addCount(Counter);
+	} else {
+		showTime(Counter);
+	}
+}); 
+</script>
+
+
+
+   
+
+
+  <script src="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.3.5/dist/jquery.fancybox.min.js"></script>
+  <script>
+  //利用 FancyBox 实现点击图片放大
+  $(document).ready(function() {
+    $('article img').not('[hidden]').not('.panel-body img').each(function() {
+      var $image = $(this);
+      var imageCaption = $image.attr('alt');
+      var $imageWrapLink = $image.parent('a');
+      if ($imageWrapLink.length < 1) {
+        var src = this.getAttribute('src');
+        var idx = src.lastIndexOf('?');
+        if (idx != -1) {
+          src = src.substring(0, idx);
+        }
+        $imageWrapLink = $image.wrap('<a href="' + src + '"></a>').parent('a');
+      }
+      $imageWrapLink.attr('data-fancybox', 'images');
+      if (imageCaption) {
+        $imageWrapLink.attr('data-caption', imageCaption);
+      }
+    });
+    $().fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+    });
+  });
+  </script>
+
+
+
+
+
+</body>
+</html>
