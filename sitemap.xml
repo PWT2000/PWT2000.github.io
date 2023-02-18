@@ -176,13 +176,6 @@
   </url>
   
   <url>
-    <loc>http://example.com/tags/Linux/</loc>
-    <lastmod>2023-02-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://example.com/tags/Github/</loc>
     <lastmod>2023-02-18</lastmod>
     <changefreq>weekly</changefreq>
@@ -191,6 +184,13 @@
   
   <url>
     <loc>http://example.com/tags/AltiumDesigner/</loc>
+    <lastmod>2023-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/tags/Linux/</loc>
     <lastmod>2023-02-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -220,7 +220,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/categories/Linux%E5%9F%BA%E7%A1%80/</loc>
+    <loc>http://example.com/categories/Qt/Qt1/</loc>
     <lastmod>2023-02-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -234,14 +234,14 @@
   </url>
   
   <url>
-    <loc>http://example.com/categories/STM32%E5%9F%BA%E7%A1%80/</loc>
+    <loc>http://example.com/categories/Linux%E5%9F%BA%E7%A1%80/</loc>
     <lastmod>2023-02-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://example.com/categories/Qt/Qt1/</loc>
+    <loc>http://example.com/categories/STM32%E5%9F%BA%E7%A1%80/</loc>
     <lastmod>2023-02-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
